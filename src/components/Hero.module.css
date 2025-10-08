@@ -1,0 +1,145 @@
+.hero {
+    position: relative;
+    color: var(--text-primary);
+    background-color: var(--primary-bg);
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  .title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .highlight {
+    color: var(--accent-1);
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    color: var(--text-secondary);
+  }
+  
+  .ctaButton {
+    background-color: var(--accent-1);
+    border-color: var(--accent-1);
+    color: var(--primary-bg);
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    text-decoration: none;
+  }
+  
+  .ctaButton:hover {
+    background-color: var(--accent-2);
+    border-color: var(--accent-2);
+    color: var(--primary-bg);
+  }
+  
+  .ctaButtonOutline {
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .ctaButtonOutline:hover {
+    background-color: var(--text-primary);
+    color: var(--primary-bg);
+  }
+  
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height:85%;
+    margin-left: 10px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .title {
+      font-size: 4rem;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+    }
+
+    .ctaButton, .ctaButtonOutline {
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 3rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .heroContent {
+      align-items: center;
+      text-align: center;
+      margin-left: 0;
+      padding: 0 20px;
+      justify-content: center; /* Center content vertically on small screens */
+      height: 100%; /* Take full height to center content */
+    }
+
+    .ctaButton, .ctaButtonOutline {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+
+    .ctaButton:last-child, .ctaButtonOutline:last-child {
+      margin-bottom: 0;
+    }
+
+    .heroContent > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+    }
+
+    .ctaButton, .ctaButtonOutline {
+      width: 90%;
+      font-size: 1rem;
+      padding: 0.7rem 1.5rem;
+    }
+  }

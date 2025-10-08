@@ -1,0 +1,21 @@
+.features {
+    padding: 6rem 0;
+  }
+  
+  .featureCard {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .featureIcon {
+    font-size: 3rem;
+    color: #306998;
+    margin-bottom: 1rem;
+  }
+  
+  .featureTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  

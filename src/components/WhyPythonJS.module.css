@@ -1,0 +1,239 @@
+.container {
+    background-color: var(--secondary-bg);
+    padding: 50px;
+    text-align: center;
+    color: var(--text-primary);
+  }
+  
+  .title {
+    color: var(--text-primary);
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .languagesGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .languageCard {
+    background-color: var(--primary-bg); /* Changed to primary-bg for contrast */
+    border-radius: 10px;
+    padding: 40px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .languageCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-1);
+  }
+  
+  .icon {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--accent-1);
+    /* Removed explicit background and glow for a cleaner look */
+  }
+  
+  .languageTitle {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+  
+  .featureItem {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .checkmark {
+    color: var(--accent-1);
+    margin-right: 10px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  .readyText {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .startButton {
+    background-color: var(--accent-1);
+    color: var(--primary-bg);
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .startButton:hover {
+    background-color: var(--accent-2);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .container {
+      padding: 40px;
+    }
+
+    .title {
+      font-size: 28px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+    }
+
+    .languagesGrid {
+      gap: 20px;
+    }
+
+    .languageCard {
+      padding: 30px;
+    }
+
+    .icon {
+      font-size: 3em;
+    }
+
+    .languageTitle {
+      font-size: 1.6rem;
+    }
+
+    .featuresList {
+      font-size: 0.9rem;
+    }
+
+    .readyText {
+      font-size: 1rem;
+    }
+
+    .startButton {
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 30px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+    }
+
+    .languagesGrid {
+      grid-template-columns: 1fr; /* Single column on small screens */
+      gap: 20px;
+    }
+
+    .languageCard {
+      padding: 25px;
+    }
+
+    .icon {
+      font-size: 2.5em;
+    }
+
+    .languageTitle {
+      font-size: 1.4rem;
+    }
+
+    .featuresList {
+      font-size: 0.85rem;
+    }
+
+    .readyText {
+      font-size: 0.9rem;
+    }
+
+    .startButton {
+      font-size: 0.95rem;
+      padding: 0.8rem 1.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+    }
+
+    .languageCard {
+      padding: 20px;
+    }
+
+    .icon {
+      font-size: 2em;
+    }
+
+    .languageTitle {
+      font-size: 1.2rem;
+    }
+
+    .featuresList {
+      font-size: 0.8rem;
+    }
+
+    .readyText {
+      font-size: 0.85rem;
+    }
+
+    .startButton {
+      font-size: 0.9rem;
+      padding: 0.7rem 1.5rem;
+    }
+  }

@@ -1,0 +1,37 @@
+.codeWrapper {
+    background-color: var(--secondary-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    font-family: var(--font-geist-mono);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    overflow-x: auto; /* Enable horizontal scrolling for code on small screens */
+  }
+
+  .codeWrapper pre {
+    white-space: pre-wrap; /* Allow code to wrap */
+    word-break: break-word;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .codeWrapper {
+      padding: 1.5rem;
+    }
+
+    .codeWrapper pre,
+    .codeWrapper code {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .codeWrapper {
+      padding: 1rem;
+    }
+
+    .codeWrapper pre,
+    .codeWrapper code {
+      font-size: 0.8rem;
+    }
+  }

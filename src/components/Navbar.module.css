@@ -1,0 +1,91 @@
+.navbar {
+    background-color: var(--navbar-bg); /* Use a CSS variable for dynamic background */
+    backdrop-filter: blur(6px);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    color: var(--text-primary);
+  }
+  
+  .navbarContent {
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, theme switcher right */
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    color: var(--accent-1);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 0;
+  }
+  
+  .links {
+    flex-grow: 1; /* Allows links to take available space */
+    justify-content: center; /* Centers the links within their available space */
+    display: flex;
+    margin-right: 0;
+  }
+
+  .links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .links a svg {
+    margin-right: 8px;
+    color: var(--text-primary);
+  }
+  
+  .links a:hover {
+    color: var(--accent-1);
+  }
+  
+  .themeSwitcher {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--accent-1);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navbarContent {
+      padding: 0 15px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .links {
+      display: none; /* Hide links on small screens, would be replaced by a hamburger menu */
+    }
+
+    .themeSwitcher {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbarContent {
+      padding: 0 10px;
+    }
+
+    .logo {
+      font-size: 18px;
+    }
+
+    .themeSwitcher {
+      font-size: 16px;
+    }
+  }
