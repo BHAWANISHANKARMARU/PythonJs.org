@@ -54,7 +54,7 @@ const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      image: '/image copy 9.png', // Placeholder image
+      image: '/chat-app.png', // Updated image path
       title: 'Real-time Chat App',
       description: 'A real-time chat application built with Node.js and React.',
       technologies: ['javascript', 'react', 'node.js'],
@@ -66,7 +66,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      image: '/image copy 10.png', // Placeholder image
+      image: '/data-tool.png', // Updated image path
       title: 'Data Analysis Tool',
       description: 'A tool for analyzing large datasets using Python and pandas.',
       technologies: ['python', 'pandas'],
@@ -78,7 +78,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      image: '/image copy 11.png', // Placeholder image
+      image: '/e-com.png', // Updated image path
       title: 'E-commerce Platform',
       description: 'A full-fledged e-commerce platform built with Django and React.',
       technologies: ['django', 'react', 'python'],
@@ -106,7 +106,7 @@ const Projects = () => {
       className={styles.projectsContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       variants={containerVariants}
     >

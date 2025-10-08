@@ -1,0 +1,149 @@
+.blogPostContainer {
+    padding: 120px 20px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans);
+  }
+  
+  .title {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+    font-weight: bold;
+    line-height: 1.2;
+  }
+  
+  .meta {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+  
+  .content {
+    line-height: 1.8;
+    font-size: 1.1em;
+  }
+  
+  .content h1,
+  .content h2,
+  .content h3,
+  .content h4,
+  .content h5,
+  .content h6 {
+    color: var(--text-primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+  }
+  
+  .content h1 {
+    font-size: 2.5em;
+  }
+  .content h2 {
+    font-size: 2em;
+  }
+  .content h3 {
+    font-size: 1.5em;
+  }
+  
+  .content p {
+    margin-bottom: 1em;
+    color: var(--text-secondary);
+  }
+  
+  .content a {
+    color: var(--accent-1);
+    text-decoration: none;
+  }
+  
+  .content a:hover {
+    text-decoration: underline;
+  }
+  
+  .content ul,
+  .content ol {
+    margin-bottom: 1em;
+    padding-left: 20px;
+    color: var(--text-secondary);
+  }
+  
+  .content li {
+    margin-bottom: 0.5em;
+  }
+  
+  .content code {
+    background-color: var(--secondary-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 5px;
+    font-family: var(--font-geist-mono);
+    color: var(--accent-1);
+  }
+  
+  .content pre {
+    background-color: var(--secondary-bg);
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+    font-family: var(--font-geist-mono);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .blogPostContainer {
+      padding: 100px 15px 50px;
+    }
+
+    .title {
+      font-size: 2.5em;
+    }
+
+    .meta {
+      font-size: 0.8em;
+    }
+
+    .content {
+      font-size: 1em;
+    }
+
+    .content h1 {
+      font-size: 2em;
+    }
+    .content h2 {
+      font-size: 1.8em;
+    }
+    .content h3 {
+      font-size: 1.3em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .blogPostContainer {
+      padding: 80px 10px 40px;
+    }
+
+    .title {
+      font-size: 2em;
+    }
+
+    .meta {
+      font-size: 0.75em;
+    }
+
+    .content {
+      font-size: 0.95em;
+    }
+
+    .content h1 {
+      font-size: 1.8em;
+    }
+    .content h2 {
+      font-size: 1.5em;
+    }
+    .content h3 {
+      font-size: 1.2em;
+    }
+  }
