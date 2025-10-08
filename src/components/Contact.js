@@ -53,7 +53,7 @@ const Contact = () => {
     >
       <h1 className={styles.title}>Contact Us</h1>
       <p className={styles.description}>
-        We'd love to hear from you! Send us a message or find our contact details below.
+        We&apos;d love to hear from you! Send us a message or find our contact details below.
       </p>
 
       <div className={styles.contentGrid}>
