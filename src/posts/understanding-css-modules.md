@@ -7,6 +7,8 @@ summary: Learn how CSS Modules help you write modular and maintainable CSS in yo
 
 # Understanding CSS Modules
 
+![CSS Modules](/file.svg)
+
 CSS Modules are a popular solution for encapsulating styles in web development, particularly within component-based architectures like React and Next.js. They solve common CSS problems such as global scope, naming collisions, and maintainability.
 
 ## What are CSS Modules?

@@ -49,7 +49,7 @@ const RealProjects = () => {
       className={styles.container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       variants={containerVariants}
     >

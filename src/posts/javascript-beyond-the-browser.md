@@ -7,6 +7,8 @@ summary: Dive into the versatility of JavaScript, from Node.js backends to deskt
 
 # JavaScript: Beyond the Browser
 
+![JavaScript Beyond Browser](/blog-placeholder-2.png)
+
 JavaScript, once confined to web browsers, has evolved into a versatile powerhouse capable of powering a wide array of applications. Its journey beyond the browser began with Node.js, enabling server-side development, and has since expanded into mobile, desktop, and even IoT devices.
 
 ## Node.js and Server-Side JavaScript

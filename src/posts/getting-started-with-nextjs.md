@@ -7,6 +7,8 @@ summary: A beginner's guide to setting up your first Next.js project and underst
 
 # Getting Started with Next.js
 
+![Next.js Logo](/next.svg)
+
 Next.js is a powerful React framework that enables you to build server-side rendered (SSR) and statically generated (SSG) web applications with ease. It comes with a lot of features out-of-the-box, making development faster and more efficient.
 
 ## Why Next.js?
