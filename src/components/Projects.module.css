@@ -34,7 +34,7 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23CCD6F6%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-12.3%203.2-16.1%208.1-3.8%204.9-4.6%2011-2.1%2017.1l139.7%20180.6c2.8%203.6%207.2%205.6%2011.8%205.6s9-2%2011.8-5.6L290.2%2091.5c2.5-6.1%201.7-12.2-2.1-17.1z%22%2F%3E%3C%2Fsvg%3E');
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23CCD6F6%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-12.3%203.2-16.1%208.1-3.8%204.9-4.6%2011-2.1%2017.1l139.7%20180.6c2.8%203.6%207.2%205.6%2011.8%205.6s9-2%2011.8-5.6L290.2%2091.5c2.5-6.1%201.7-12.2-2.1-17.1z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     background-position: right 15px top 50%;
     background-size: 0.6em auto;
@@ -47,8 +47,14 @@
   
   .projectsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr; /* Ensure consistent row heights */
     gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    place-items: center; /* Center items within their grid cells */
   }
   
   .projectCard {
@@ -60,6 +66,9 @@
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    width: 100%; /* Allow card to take full width of its grid cell */
+    max-width: 350px; /* Constrain max width */
+    height: 450px; /* Fixed height for consistency */
   }
   
   .projectCard:hover {
@@ -166,6 +175,9 @@
 
     .projectCard {
       padding: 0;
+      width: 100%; /* Allow card to take full width of its grid cell */
+      max-width: 300px; /* Adjusted max width for medium screens */
+      height: 400px; /* Adjusted fixed height for medium screens */
     }
 
     .cardContent {
@@ -210,6 +222,13 @@
     .projectsGrid {
       grid-template-columns: 1fr; /* Single column on small screens */
       gap: 20px;
+    }
+
+    .projectCard {
+      padding: 0;
+      width: 100%; /* Take full width on small screens */
+      max-width: 350px; /* Max width for single card on small screens */
+      height: auto; /* Allow height to adjust on small screens */
     }
 
     .cardImage {

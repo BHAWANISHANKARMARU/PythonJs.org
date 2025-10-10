@@ -6,12 +6,13 @@ import BlogPostClient from '@/components/BlogPostClient';
 export async function generateStaticParams() {
   const postIds = getAllPostIds();
   return postIds.map((post) => ({
-    slug: post.params.slug,
+    slug: String(post.params.slug), // Explicitly cast to string
   }));
 }
 
 export default async function BlogPost({ params }) {
-  const postData = await getPostData(params.slug);
+  const slug = String(params.slug); // Explicitly cast to string
+  const postData = await getPostData(slug);
 
   return (
     <BlogPostClient postData={postData} />

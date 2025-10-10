@@ -7,8 +7,7 @@ summary: Learn how CSS Modules help you write modular and maintainable CSS in yo
 
 # Understanding CSS Modules
 
-![CSS Modules](/file.svg)
-
+<img src="/file.svg" alt="CSS Modules" class="img-center"/>
 CSS Modules are a popular solution for encapsulating styles in web development, particularly within component-based architectures like React and Next.js. They solve common CSS problems such as global scope, naming collisions, and maintainability.
 
 ## What are CSS Modules?
@@ -27,6 +26,11 @@ At its core, a CSS Module is a CSS file in which all class names and animation n
 In a Next.js project, you can create a file like `MyComponent.module.css`:
 
 ```css
+.image-center{
+  height:100px;
+  width:100px;
+}
+
 .container {
   background-color: blue;
   padding: 20px;

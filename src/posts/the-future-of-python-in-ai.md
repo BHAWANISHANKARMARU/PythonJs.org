@@ -7,7 +7,7 @@ summary: Explore how Python continues to dominate the AI landscape with new libr
 
 # The Future of Python in AI
 
-![Python in AI](/blog-placeholder-1.png)
+<img src="/chat-app.png" alt="Python in AI" class="img-left" />
 
 Python has long been the language of choice for artificial intelligence and machine learning, and its future in this domain looks brighter than ever. With the continuous development of powerful libraries like TensorFlow, PyTorch, and scikit-learn, Python provides an accessible yet robust ecosystem for AI research and development.
 

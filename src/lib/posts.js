@@ -2,7 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype'; // Import remark-rehype
+import rehypeRaw from 'rehype-raw';
+import rehypeStringify from 'rehype-stringify'; // Import rehype-stringify
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
@@ -56,9 +59,14 @@ export async function getPostData(slug) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html)
+    .use(remarkGfm)
+    .use(remarkRehype, { allowDangerousHtml: true }) // Convert remark to rehype AST
+    .use(rehypeRaw) // Allow raw HTML to pass through
+    .use(rehypeStringify) // Convert rehype AST to HTML string
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+
+  console.log("Generated HTML for", slug, ":", contentHtml); // Keep debugging line
 
   // Combine the data with the id and contentHtml
   return {

@@ -7,7 +7,7 @@ summary: Learn the best practices for developing robust and scalable web applica
 
 # Building Scalable Web Apps with Django
 
-![Django Web Apps](/e-com.png)
+<img src="/e-com.png" alt="Django Web Apps" class="img-right" />
 
 Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel.
 

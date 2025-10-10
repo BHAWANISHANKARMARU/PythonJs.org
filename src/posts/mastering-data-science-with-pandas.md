@@ -7,7 +7,7 @@ summary: A comprehensive guide to using Pandas for data manipulation and analysi
 
 # Mastering Data Science with Pandas
 
-![Pandas Data Science](/data-tool.png)
+<img src="/chat-app.png" alt="Pandas Data Science" class="img-right" />
 
 Pandas is an indispensable library for data scientists working with Python. It provides high-performance, easy-to-use data structures and data analysis tools, making data manipulation and cleaning a breeze. This post will guide you through some of its core functionalities.
 

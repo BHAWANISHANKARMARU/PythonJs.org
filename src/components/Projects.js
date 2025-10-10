@@ -1,28 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import React, { useState, useContext } from 'react';
 import styles from './Projects.module.css';
 import { FaNodeJs, FaReact, FaPython } from 'react-icons/fa';
 import { SiPandas, SiDjango } from 'react-icons/si';
 import { ThemeContext } from '@/context/ThemeContext';
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
+// Removed containerVariants and itemVariants
 
 const Projects = () => {
   const [filter, setFilter] = useState('All Technologies');
@@ -102,13 +86,9 @@ const Projects = () => {
   });
 
   return (
-    <motion.div
+    <div // Changed from motion.div
       className={styles.projectsContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      variants={containerVariants}
+      // Removed framer-motion props
     >
       <h1 className={styles.title}>Explore All Projects</h1>
       <div className={styles.filters}>
@@ -128,7 +108,7 @@ const Projects = () => {
       </div>
       <div className={styles.projectsGrid}>
         {sortedProjects.map((project) => (
-          <motion.div key={project.id} className={styles.projectCard} variants={itemVariants}>
+          <div key={project.id} className={styles.projectCard} /* Removed variants={itemVariants} */>
             <div className={styles.cardImage} style={{ backgroundImage: `url(${project.image})` }}>
               <div className={styles.comingSoonButton}>Coming Soon</div>
             </div>
@@ -146,10 +126,10 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
