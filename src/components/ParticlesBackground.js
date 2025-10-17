@@ -24,92 +24,119 @@ export default function ParticleBackground({ className }) {
   }, []);
 
   const darkThemeColors = {
-    background: "#0A192F",
-    particle: "#64FFDA",
-    link: "#64FFDA",
+    background:"#090e16",
+    particle: "",
+    link: "",
   };
 
   const lightThemeColors = {
-    background: "#F0F2F5",
-    particle: "#20C997", // Changed to match light theme accent
-    link: "#20C997",     // Changed to match light theme accent
+    background: "#111111",
+    particle: "#FFA500",
+    link: "#FFA500",
   };
 
   const currentColors = theme === 'dark' ? darkThemeColors : lightThemeColors;
 
   const desktopOptions = {
     fullScreen: { enable: false },
-    background: { color: currentColors.background },
-    fpsLimit: 80,
-    particles: {
-      color: { value: currentColors.particle },
-      links: {
-        color: currentColors.link,
-        distance: 160,
-        enable: true,
-        opacity: 0.4,
-        width: 0.6,
+    background: {
+      color: {
+        value: currentColors.background,
       },
-      move: { enable: true, speed: 0.7 },
-      number: { value: 250 },
-      opacity: { value: 0.5 },
-      shape: { type: "circle" },
-      size: { value: { min: 1, max: 3 } },
+    },
+    fpsLimit: 60,
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
+      },
+      color: {
+        value: currentColors.particle,
+      },
+      shape: {
+        type: "circle",
+      },
+      opacity: {
+        value: 0.5,
+        random: false,
+        anim: {
+          enable: false,
+        },
+      },
+      size: {
+        value: 2,
+        random: true,
+        anim: {
+          enable: false,
+        },
+      },
+      links: {
+        enable: true,
+        distance: 150,
+        color: currentColors.link,
+        opacity: 0.4,
+        width: 1,
+      },
+      move: {
+        enable: true,
+        speed: 0.5,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+      },
     },
     interactivity: {
+      detect_on: "canvas",
       events: {
-        onHover: {
+        onhover: {
           enable: true,
           mode: "grab",
         },
-        onClick: {
+        onclick: {
           enable: true,
           mode: "push",
         },
+        resize: true,
       },
       modes: {
         grab: {
-          distance: 150,
-          links: { opacity: 0.5 },
+          distance: 140,
+          line_linked: {
+            opacity: 1,
+          },
         },
         push: {
-          quantity: 4,
+          particles_nb: 4,
         },
       },
     },
-    detectRetina: true,
+    retina_detect: true,
   };
 
   const mobileOptions = {
-    fullScreen: { enable: false },
-    background: { color: currentColors.background },
-    fpsLimit: 80, // Lower FPS limit for mobile
+    ...desktopOptions,
     particles: {
-      color: { value: currentColors.particle },
-      links: {
-        color: currentColors.link,
-        distance: 200, // Further reduced distance for a 'zoomed-in' feel
-        enable: true,
-        opacity: 0.1, // Reduced opacity for mobile
-        width: 0.77, // Reduced width for mobile
+      ...desktopOptions.particles,
+      number: {
+        value: 50,
       },
-      move: { enable: true, speed: 0.5 }, // Slower speed for a 'zoomed-in' feel
-      number: { value: 120 }, // Significantly reduced number for mobile
-      opacity: { value: 0.3 }, // Adjusted opacity for mobile
-      shape: { type: "circle" },
-      size: { value: { min: 2, max: 4 } }, // Increased size for 'zoomed-in' effect
     },
     interactivity: {
+      ...desktopOptions.interactivity,
       events: {
-        onHover: {
-          enable: false, // Disable hover interactivity for mobile
+        onhover: {
+          enable: false,
         },
-        onClick: {
-          enable: false, // Disable click interactivity for mobile
+        onclick: {
+          enable: false,
         },
       },
     },
-    detectRetina: true,
   };
 
   return (

@@ -1,19 +1,37 @@
 body {
   background-color: var(--primary-bg);
   color: var(--text-primary);
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 :root {
   /* Dark Theme Variables */
-  --primary-bg: #0A192F;
-  --secondary-bg: #112240;
-  --accent-1: #64FFDA;
+  --primary-bg: #0D1B2A;
+  --secondary-bg: #1B263B;
+  --accent-1: #E0E1DD;
+  --accent-1-translucent: rgba(100, 255, 218, 0.1);
   --accent-2: #8892B0;
-  --text-primary: #CCD6F6;
+  --text-primary: #778DA9;
   --text-secondary: #A8B2D1;
   --border-color: #233554;
   --navbar-bg: rgba(10, 25, 47, 0.8); /* Semi-transparent primary-bg for Navbar */
   --project-card-bg: #1A2A3A; /* Darker blue-grey for project cards */
+  
+  /* Sidebar Variables for Dark Theme */
+  --sidebar: #0D1B2A;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #64FFDA;
+  --sidebar-primary-foreground: #0A192F;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #64FFDA;
+  
+  /* Additional Variables for compatibility */
+  --background: #0A192F;
+  --foreground: #CCD6F6;
+  --accent: #1A2A3A;
+  --accent-foreground: #CCD6F6;
 }
 
 body.light-theme {
@@ -21,12 +39,23 @@ body.light-theme {
   --primary-bg: #F0F2F5;
   --secondary-bg: #FFFFFF;
   --accent-1: #20C997; /* Vibrant Teal-Green for light theme accent */
+  --accent-1-translucent: rgba(32, 201, 151, 0.1);
   --accent-2: #495057; /* Darker grey for secondary accent */
   --text-primary: #343A40;
   --text-secondary: #6C757D;
   --border-color: #DEE2E6;
   --navbar-bg: rgba(255, 255, 255, 0.8); /* Semi-transparent white for Navbar */
   --project-card-bg: #E8EBF0; /* Very light grey for project cards */
+  
+  /* Sidebar Variables for Light Theme */
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0f172a;
+  --sidebar-primary-foreground: #f8fafc;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #20C997;
 }
 
 .mobile-padding-bottom {

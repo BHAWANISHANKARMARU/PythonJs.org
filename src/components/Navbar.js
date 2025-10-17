@@ -3,7 +3,7 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-import { FaHome, FaBook, FaFolderOpen, FaBlog, FaEnvelope, FaMoon, FaSun } from 'react-icons/fa';
+import { FaMoon, FaSun } from 'react-icons/fa';
 import { ThemeContext } from '@/context/ThemeContext';
 
 const Navbar = () => {
@@ -15,15 +15,17 @@ const Navbar = () => {
         <Link href="/" className={styles.logo}>
           PythonJS
         </Link>
-        <div className={styles.links}>
-          <Link href="/"><FaHome /> Home</Link>
-          <Link href="/courses"><FaBook /> Courses</Link>
-          <Link href="/projects"><FaFolderOpen /> Projects</Link>
-          <Link href="/blog"><FaBlog /> Blog</Link>
-          <Link href="/contact"><FaEnvelope /> Contact Us</Link>
-        </div>
-        <div className={styles.themeSwitcher} onClick={toggleTheme}>
-          {theme === 'dark' ? <FaSun /> : <FaMoon />}
+        <div className={styles.navItems}>
+          <div className={styles.links}>
+            <Link href="/">Home</Link>
+            <Link href="/courses">Courses</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/contact">Contact Us</Link>
+          </div>
+          <div className={styles.themeSwitcher} onClick={toggleTheme}>
+            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+          </div>
         </div>
       </div>
     </nav>
