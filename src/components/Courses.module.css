@@ -1,0 +1,217 @@
+.coursesContainer {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans);
+  }
+  
+  .title {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    font-weight: bold;
+    letter-spacing: -0.03em;
+  }
+  
+  .description {
+    font-size: 1.3em;
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    line-height: 1.6;
+  }
+  
+  .coursesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .courseCard {
+    background-color: var(--primary-bg); /* Changed to primary-bg for contrast */
+    padding: 35px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--border-color);
+  }
+  
+  .courseCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-1); /* Highlight border on hover */
+  }
+  
+  .icon {
+    margin-bottom: 20px;
+    background-color: var(--border-color); /* Background for icon */
+    border-radius: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-1);
+  }
+  
+  .courseTitle {
+    font-size: 1.8em;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .courseDescription {
+    color: var(--text-secondary);
+    font-size: 1em;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    line-height: 1.5;
+  }
+  
+  .comingSoonButton {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    color: var(--primary-bg);
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--accent-1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .comingSoonButton:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+    background-color: var(--accent-2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .coursesContainer {
+      padding: 40px 15px;
+    }
+
+    .title {
+      font-size: 3em;
+    }
+
+    .description {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+    .coursesGrid {
+      gap: 25px;
+    }
+
+    .courseCard {
+      padding: 30px;
+    }
+
+    .icon {
+      font-size: 3.5em;
+      padding: 12px;
+    }
+
+    .courseTitle {
+      font-size: 1.6em;
+    }
+
+    .courseDescription {
+      font-size: 0.95em;
+    }
+
+    .comingSoonButton {
+      font-size: 1em;
+      padding: 10px 25px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .coursesContainer {
+      padding: 30px 10px;
+    }
+
+    .title {
+      font-size: 2.5em;
+    }
+
+    .description {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .coursesGrid {
+      grid-template-columns: 1fr; /* Stack cards vertically */
+      gap: 20px;
+    }
+
+    .courseCard {
+      padding: 25px;
+    }
+
+    .icon {
+      font-size: 3em;
+      padding: 10px;
+    }
+
+    .courseTitle {
+      font-size: 1.4em;
+    }
+
+    .courseDescription {
+      font-size: 0.9em;
+    }
+
+    .comingSoonButton {
+      font-size: 0.95em;
+      padding: 8px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .coursesContainer {
+      padding: 20px 5px;
+    }
+
+    .title {
+      font-size: 2em;
+    }
+
+    .description {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .courseCard {
+      padding: 20px;
+    }
+
+    .icon {
+      font-size: 2.5em;
+      padding: 8px;
+    }
+
+    .courseTitle {
+      font-size: 1.2em;
+    }
+
+    .courseDescription {
+      font-size: 0.85em;
+    }
+
+    .comingSoonButton {
+      font-size: 0.9em;
+      padding: 7px 15px;
+    }
+  }

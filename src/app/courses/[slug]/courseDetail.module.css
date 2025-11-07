@@ -1,0 +1,334 @@
+.courseLayout {
+  display: flex;
+  height: calc(100vh - 100px);
+  background-color: var(--secondary-bg);
+  color: var(--text-secondary);
+  position: relative; /* Add position relative to be a positioning context */
+}
+
+.sidebar {
+  width: 320px;
+  background-color: var(--primary-bg);
+  border-right: 1px solid var(--border-color);
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarCollapsed {
+  width: 80px;
+}
+
+.sidebarHeader {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Push title and button to the ends */
+  border-bottom: 1px solid var(--border-color);
+}
+
+
+
+.sidebarHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebarCollapsed .sidebarHeader h3 {
+  display: none;
+}
+
+.sidebarContent {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.sidebarSection {
+  margin-bottom: 20px;
+}
+
+.sidebarCollapsed .sidebarSection {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-2);
+  padding: 0 10px 10px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebarCollapsed .sectionTitle {
+  justify-content: center;
+}
+
+.sectionIcon {
+  font-size: 16px;
+}
+
+.sidebarCollapsed .sectionText {
+  display: none;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarCollapsed .linksList {
+  display: none;
+}
+
+.linkItem {
+  display: flex;
+  flex-direction: column; /* Change to column */
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: var(--text-secondary);
+}
+
+.linkTitle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.linkItem:hover {
+  background-color: var(--accent-1-translucent);
+  color: var(--text-primary);
+}
+
+.activeLink {
+  background-color: var(--accent-1);
+  color: var(--primary-bg);
+  font-weight: 600;
+}
+
+.linkIcon {
+  font-size: 18px;
+}
+
+.sidebarCollapsed .linkText {
+  display: none;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.mainContentShifted {
+  margin-left: 120px;
+}
+
+.mainContentCollapsed {
+  margin-left: 80px;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sidebarFooter {
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.userName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.userEmail {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.sidebarCollapsed .userInfo {
+  display: none;
+}
+
+.chevron {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.sidebarCollapsed .chevron {
+  display: none;
+}
+
+.linkItem:hover .chevron {
+  color: var(--text-primary);
+}
+
+.sublinksList {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.sublinkItem {
+  padding: 8px 0;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.sublinkItem:hover {
+  color: var(--text-primary);
+}
+
+.description{
+  font-size: 24px;
+}
+
+.details{
+  font-size: 18px;
+}
+
+.sidebarContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebarContent::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+.sidebarContent::-webkit-scrollbar-thumb {
+  background-color: var(--accent-1);
+  border-radius: 10px;
+  border: 2px solid var(--secondary-bg);
+}
+
+.mainContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mainContent::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+.mainContent::-webkit-scrollbar-thumb {
+  background-color: var(--accent-1);
+  border-radius: 10px;
+  border: 2px solid var(--primary-bg);
+}
+
+.topNavigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.navButton {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(:disabled) {
+  background-color: var(--accent-1-translucent);
+  border-color: var(--accent-1);
+  color: var(--text-primary);
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bottomNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.bottomNavButton {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 48%;
+}
+
+.bottomNavButton:hover:not(:disabled) {
+  border-color: var(--accent-1);
+  color: var(--text-primary);
+}
+
+.bottomNavButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nextButton {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.navButtonContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.navTitle {
+  font-weight: 600;
+  color: var(--text-primary);
+}
