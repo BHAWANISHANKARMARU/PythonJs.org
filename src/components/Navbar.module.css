@@ -9,22 +9,22 @@
   
   .navbarContent {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+    padding-left: 0;
+    padding-right: 20px;
+  }  
   .logo {
     color: var(--text-primary);
     font-size: 24px;
     font-weight: bold;
+    margin-left: 100px;
     text-decoration: none;
   }
   
   .links {
     display: flex;
+    
   }
 
   .links a {
@@ -47,7 +47,7 @@
     font-size: 20px;
     cursor: pointer;
     color: var(--text-primary);
-    margin-left: 20px;
+    margin-left: 50px;
   }
 
   /* Responsive adjustments */

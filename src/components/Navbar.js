@@ -15,17 +15,15 @@ const Navbar = () => {
         <Link href="/" className={styles.logo}>
           PythonJS
         </Link>
-        <div className={styles.navItems}>
-          <div className={styles.links}>
-            <Link href="/">Home</Link>
-            <Link href="/courses">Courses</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact Us</Link>
-          </div>
-          <div className={styles.themeSwitcher} onClick={toggleTheme}>
-            {theme === 'dark' ? <FaSun /> : <FaMoon />}
-          </div>
+        <div className={styles.links}>
+          <Link href="/">Home</Link>
+          <Link href="/courses">Courses</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/contact">Contact Us</Link>
+        </div>
+        <div className={styles.themeSwitcher} onClick={toggleTheme}>
+          {theme === 'dark' ? <FaSun /> : <FaMoon />}
         </div>
       </div>
     </nav>
