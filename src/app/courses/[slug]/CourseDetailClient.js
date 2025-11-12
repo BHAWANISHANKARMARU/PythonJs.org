@@ -30,10 +30,21 @@ const CourseDetailClient = ({ course }) => {
   const currentIndex = allLinks.findIndex((link) => link.title === activeLink);
 
   useEffect(() => {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      const link = allLinks.find(l => l.slug === hash);
+      if (link) {
+        setActiveContent(link.content);
+        setActiveLink(link.title);
+        return;
+      }
+    }
+
     if (allLinks.length > 0) {
       const firstLink = allLinks[0];
       setActiveContent(firstLink.content);
       setActiveLink(firstLink.title);
+      window.history.replaceState(null, '', `#${firstLink.slug}`);
     }
   }, [course]);
 
@@ -45,9 +56,10 @@ const CourseDetailClient = ({ course }) => {
     );
   }
 
-  const handleLinkClick = (content, title) => {
+  const handleLinkClick = (content, title, slug) => {
     setActiveContent(content);
     setActiveLink(title);
+    window.history.pushState(null, '', `#${slug}`);
   };
 
   const toggleSidebar = () => {
@@ -58,7 +70,7 @@ const CourseDetailClient = ({ course }) => {
     const nextIndex = currentIndex + 1;
     if (nextIndex < allLinks.length) {
       const nextLink = allLinks[nextIndex];
-      handleLinkClick(nextLink.content, nextLink.title);
+      handleLinkClick(nextLink.content, nextLink.title, nextLink.slug);
     }
   };
 
@@ -66,7 +78,7 @@ const CourseDetailClient = ({ course }) => {
     const prevIndex = currentIndex - 1;
     if (prevIndex >= 0) {
       const prevLink = allLinks[prevIndex];
-      handleLinkClick(prevLink.content, prevLink.title);
+      handleLinkClick(prevLink.content, prevLink.title, prevLink.slug);
     }
   };
 
@@ -100,7 +112,7 @@ const CourseDetailClient = ({ course }) => {
                   <li
                     key={linkIndex}
                     className={`${styles.linkItem} ${activeLink === link.title ? styles.activeLink : ""}`}
-                    onClick={() => handleLinkClick(link.content, link.title)}
+                    onClick={() => handleLinkClick(link.content, link.title, link.slug)}
                   >
                     {link.title}
                   </li>
@@ -110,7 +122,7 @@ const CourseDetailClient = ({ course }) => {
           ))}
         </div>
         <div className={styles.sidebarFooter}>
-          <div className={styles.userProfile}>
+          <div className={styles.userProfile} onClick={toggleSidebar}>
             <img
               src="https://www.gravatar.com/avatar/"
               alt="User Avatar"
@@ -142,7 +154,8 @@ const CourseDetailClient = ({ course }) => {
             <FaArrowRight />
           </button>
         </div>
-        <div className={styles.container}>
+        <div className={styles.contentWrapper}>
+          <div className={styles.container}>
           <div className={styles.icon}>{iconMap[course.icon]}</div>
           <h1 className={styles.title}>{course.title}</h1>
           <p className={styles.description}>{course.description}</p>
@@ -176,7 +189,8 @@ const CourseDetailClient = ({ course }) => {
               {activeContent}
             </ReactMarkdown>
           </div>
-          <div className={styles.bottomNavigation}>
+          </div>
+        <div className={styles.bottomNavigation}>
             <button
               onClick={handleBack}
               disabled={currentIndex === 0}

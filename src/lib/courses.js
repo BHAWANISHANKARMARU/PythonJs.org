@@ -48,7 +48,8 @@ export async function getCourseData(slug) {
       const subLines = subsection.split('\n');
       const subTitle = subLines[0].trim();
       const subContent = subLines.slice(1).join('\n');
-      const h3Link = { title: subTitle, content: subContent, sublinks: [] };
+      const slug = subTitle.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+      const h3Link = { title: subTitle, content: subContent, sublinks: [], slug };
       currentSection.links.push(h3Link);
 
       const h4sections = subContent.split('\n#### ');

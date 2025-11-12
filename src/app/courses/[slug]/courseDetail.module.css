@@ -128,7 +128,8 @@
 .mainContent {
   flex: 1;
   padding: 40px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
   transition: margin-left 0.3s ease;
 }
 
@@ -157,6 +158,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  cursor: pointer;
 }
 
 .userAvatar {
@@ -286,10 +288,15 @@
   cursor: not-allowed;
 }
 
+.contentWrapper {
+  flex: 1;
+  overflow-y: auto;
+}
+
 .bottomNavigation {
   display: flex;
   justify-content: space-between;
-  margin-top: 3rem;
+  margin-top: auto;
   border-top: 1px solid var(--border-color);
   padding-top: 2rem;
 }
