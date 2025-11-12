@@ -69,6 +69,7 @@
 
 .sidebarCollapsed .sectionTitle {
   justify-content: center;
+  cursor: pointer;
 }
 
 .sectionIcon {

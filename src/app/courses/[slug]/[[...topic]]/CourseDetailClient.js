@@ -15,13 +15,15 @@ import {
 } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import CodeShowcase from "../../../components/CodeShowcase";
+import { useRouter } from 'next/navigation';
+import CodeShowcase from "../../../../components/CodeShowcase";
 import styles from "./courseDetail.module.css";
 
-const CourseDetailClient = ({ course }) => {
+const CourseDetailClient = ({ course, topic }) => {
   const [activeContent, setActiveContent] = useState("");
   const [activeLink, setActiveLink] = useState("");
   const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const router = useRouter();
 
   const allLinks =
     course && course.tableOfContents
@@ -30,23 +32,12 @@ const CourseDetailClient = ({ course }) => {
   const currentIndex = allLinks.findIndex((link) => link.title === activeLink);
 
   useEffect(() => {
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-      const link = allLinks.find(l => l.slug === hash);
-      if (link) {
-        setActiveContent(link.content);
-        setActiveLink(link.title);
-        return;
-      }
+    const link = topic ? allLinks.find(l => l.slug === topic) : allLinks[0];
+    if (link) {
+      setActiveContent(link.content);
+      setActiveLink(link.title);
     }
-
-    if (allLinks.length > 0) {
-      const firstLink = allLinks[0];
-      setActiveContent(firstLink.content);
-      setActiveLink(firstLink.title);
-      window.history.replaceState(null, '', `#${firstLink.slug}`);
-    }
-  }, [course]);
+  }, [topic, course]);
 
   if (!course) {
     return (
@@ -56,10 +47,8 @@ const CourseDetailClient = ({ course }) => {
     );
   }
 
-  const handleLinkClick = (content, title, slug) => {
-    setActiveContent(content);
-    setActiveLink(title);
-    window.history.pushState(null, '', `#${slug}`);
+  const handleLinkClick = (slug) => {
+    router.push(`/courses/${course.slug}/${slug}`);
   };
 
   const toggleSidebar = () => {
@@ -70,7 +59,7 @@ const CourseDetailClient = ({ course }) => {
     const nextIndex = currentIndex + 1;
     if (nextIndex < allLinks.length) {
       const nextLink = allLinks[nextIndex];
-      handleLinkClick(nextLink.content, nextLink.title, nextLink.slug);
+      handleLinkClick(nextLink.slug);
     }
   };
 
@@ -78,7 +67,7 @@ const CourseDetailClient = ({ course }) => {
     const prevIndex = currentIndex - 1;
     if (prevIndex >= 0) {
       const prevLink = allLinks[prevIndex];
-      handleLinkClick(prevLink.content, prevLink.title, prevLink.slug);
+      handleLinkClick(prevLink.slug);
     }
   };
 
@@ -103,7 +92,7 @@ const CourseDetailClient = ({ course }) => {
         <div className={styles.sidebarContent}>
           {course.tableOfContents.map((section, index) => (
             <div key={index} className={styles.sidebarSection}>
-              <h4 className={styles.sectionTitle}>
+              <h4 className={styles.sectionTitle} onClick={() => !isSidebarOpen && toggleSidebar()}>
                 <FaBook className={styles.sectionIcon} />
                 <span className={styles.sectionText}>{section.title}</span>
               </h4>
@@ -112,7 +101,7 @@ const CourseDetailClient = ({ course }) => {
                   <li
                     key={linkIndex}
                     className={`${styles.linkItem} ${activeLink === link.title ? styles.activeLink : ""}`}
-                    onClick={() => handleLinkClick(link.content, link.title, link.slug)}
+                    onClick={() => handleLinkClick(link.slug)}
                   >
                     {link.title}
                   </li>

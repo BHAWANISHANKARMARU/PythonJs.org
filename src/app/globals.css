@@ -15,6 +15,7 @@ body {
   --border-color: #233554;
   --navbar-bg: rgba(10, 25, 47, 0.8); /* Semi-transparent primary-bg for Navbar */
   --project-card-bg: #1A2A3A; /* Darker blue-grey for project cards */
+  --coming-soon-text-color: #FFFFFF;
   
   /* Sidebar Variables for Dark Theme */
   --sidebar: #0D1B2A;
@@ -45,6 +46,7 @@ body.light-theme {
   --border-color: #DEE2E6;
   --navbar-bg: rgba(238, 238, 238, 0.993); /* Semi-transparent white for Navbar */
   --project-card-bg: #E8EBF0; /* Very light grey for project cards */
+  --coming-soon-text-color: #FFFFFF;
   
   /* Sidebar Variables for Light Theme */
   --sidebar: #f8fafc;
