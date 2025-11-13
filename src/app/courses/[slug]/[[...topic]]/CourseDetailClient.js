@@ -92,21 +92,36 @@ const CourseDetailClient = ({ course, topic }) => {
         <div className={styles.sidebarContent}>
           {course.tableOfContents.map((section, index) => (
             <div key={index} className={styles.sidebarSection}>
-              <h4 className={styles.sectionTitle} onClick={() => !isSidebarOpen && toggleSidebar()}>
-                <FaBook className={styles.sectionIcon} />
-                <span className={styles.sectionText}>{section.title}</span>
-              </h4>
-              <ul className={styles.linksList}>
-                {section.links.map((link, linkIndex) => (
-                  <li
-                    key={linkIndex}
-                    className={`${styles.linkItem} ${activeLink === link.title ? styles.activeLink : ""}`}
-                    onClick={() => handleLinkClick(link.slug)}
-                  >
-                    {link.title}
-                  </li>
-                ))}
-              </ul>
+              {isSidebarOpen ? (
+                <>
+                  <h4 className={styles.sectionTitle} onClick={toggleSidebar}>
+                    <FaBook className={styles.sectionIcon} />
+                    <span className={styles.sectionText}>{section.title}</span>
+                  </h4>
+                  <ul className={styles.linksList}>
+                    {section.links.map((link, linkIndex) => (
+                      <li
+                        key={linkIndex}
+                        className={`${styles.linkItem} ${activeLink === link.title ? styles.activeLink : ""}`}
+                        onClick={() => handleLinkClick(link.slug)}
+                      >
+                        {link.title}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <div
+                  className={styles.collapsedSectionIcon}
+                  onClick={() => {
+                    if (section.links && section.links.length > 0) {
+                      handleLinkClick(section.links[0].slug);
+                    }
+                  }}
+                >
+                  <FaBook className={styles.sectionIcon} />
+                </div>
+              )}
             </div>
           ))}
         </div>

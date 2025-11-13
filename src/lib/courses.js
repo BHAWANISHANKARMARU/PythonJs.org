@@ -40,8 +40,19 @@ export async function getCourseData(slug) {
 
     const lines = section.split('\n');
     const title = lines[0].trim();
+    const sectionContent = lines.slice(1).join('\n'); // Content directly under the ## heading
+    const sectionSlug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+
     const currentSection = { title, links: [] };
     tableOfContents.push(currentSection);
+
+    // Add the ## section itself as a link
+    currentSection.links.push({
+      title: title,
+      content: sectionContent, // Use the content directly under the ## heading
+      sublinks: [],
+      slug: sectionSlug,
+    });
 
     const subsections = section.split('\n### ');
     subsections.slice(1).forEach((subsection) => {

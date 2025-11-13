@@ -72,6 +72,20 @@
   cursor: pointer;
 }
 
+.collapsedSectionIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0; /* Adjust as needed */
+  cursor: pointer;
+  color: var(--accent-2); /* Or appropriate color */
+}
+
+.collapsedSectionIcon:hover {
+  background-color: var(--accent-1-translucent);
+  color: var(--text-primary);
+}
+
 .sectionIcon {
   font-size: 16px;
 }

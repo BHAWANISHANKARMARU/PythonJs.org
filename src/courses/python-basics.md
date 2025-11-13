@@ -5,6 +5,19 @@ description: 'Learn the fundamentals of Python programming.'
 icon: 'FaPython'
 ---
 
+## Introduction to Python Basics
+
+Welcome to Python Basics! This course is designed for absolute beginners with no prior programming experience. Python is a powerful, versatile, and easy-to-learn language, making it an excellent choice for your first step into the world of coding.
+
+Throughout this course, you will learn:
+- **What is Python**: Its key features and why it's so popular.
+- **Setting Up Your Environment**: How to install Python and run your first program.
+- **Python Fundamentals**: Variables, data types, control structures (if/else, loops), and functions.
+- **Data Structures**: Working with lists and dictionaries.
+- **Modules and Packages**: How to use Python's extensive libraries.
+
+By the end of this course, you will have a solid foundation in Python programming, enabling you to write simple scripts, understand basic programming logic, and prepare for more advanced topics.
+
 ## Introduction to Python
 
 ### What is Python?
